@@ -427,6 +427,8 @@ func keyType(e coninput.KeyEventRecord) KeyType {
 			return KeyCtrlBackslash
 		case '\x1f':
 			return KeyCtrlUnderscore
+		case '\x00':
+			return keyCtrlSpace
 		}
 
 		switch code { //nolint:exhaustive

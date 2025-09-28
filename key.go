@@ -120,39 +120,40 @@ func (k KeyType) String() (str string) {
 // See also:
 // https://en.wikipedia.org/wiki/C0_and_C1_control_codes
 const (
-	keyNUL KeyType = 0   // null, \0
-	keySOH KeyType = 1   // start of heading
-	keySTX KeyType = 2   // start of text
-	keyETX KeyType = 3   // break, ctrl+c
-	keyEOT KeyType = 4   // end of transmission
-	keyENQ KeyType = 5   // enquiry
-	keyACK KeyType = 6   // acknowledge
-	keyBEL KeyType = 7   // bell, \a
-	keyBS  KeyType = 8   // backspace
-	keyHT  KeyType = 9   // horizontal tabulation, \t
-	keyLF  KeyType = 10  // line feed, \n
-	keyVT  KeyType = 11  // vertical tabulation \v
-	keyFF  KeyType = 12  // form feed \f
-	keyCR  KeyType = 13  // carriage return, \r
-	keySO  KeyType = 14  // shift out
-	keySI  KeyType = 15  // shift in
-	keyDLE KeyType = 16  // data link escape
-	keyDC1 KeyType = 17  // device control one
-	keyDC2 KeyType = 18  // device control two
-	keyDC3 KeyType = 19  // device control three
-	keyDC4 KeyType = 20  // device control four
-	keyNAK KeyType = 21  // negative acknowledge
-	keySYN KeyType = 22  // synchronous idle
-	keyETB KeyType = 23  // end of transmission block
-	keyCAN KeyType = 24  // cancel
-	keyEM  KeyType = 25  // end of medium
-	keySUB KeyType = 26  // substitution
-	keyESC KeyType = 27  // escape, \e
-	keyFS  KeyType = 28  // file separator
-	keyGS  KeyType = 29  // group separator
-	keyRS  KeyType = 30  // record separator
-	keyUS  KeyType = 31  // unit separator
-	keyDEL KeyType = 127 // delete. on most systems this is mapped to backspace, I hear
+	keyNUL       KeyType = 0   // null, \0
+	keySOH       KeyType = 1   // start of heading
+	keySTX       KeyType = 2   // start of text
+	keyETX       KeyType = 3   // break, ctrl+c
+	keyEOT       KeyType = 4   // end of transmission
+	keyENQ       KeyType = 5   // enquiry
+	keyACK       KeyType = 6   // acknowledge
+	keyBEL       KeyType = 7   // bell, \a
+	keyBS        KeyType = 8   // backspace
+	keyHT        KeyType = 9   // horizontal tabulation, \t
+	keyLF        KeyType = 10  // line feed, \n
+	keyVT        KeyType = 11  // vertical tabulation \v
+	keyFF        KeyType = 12  // form feed \f
+	keyCR        KeyType = 13  // carriage return, \r
+	keySO        KeyType = 14  // shift out
+	keySI        KeyType = 15  // shift in
+	keyDLE       KeyType = 16  // data link escape
+	keyDC1       KeyType = 17  // device control one
+	keyDC2       KeyType = 18  // device control two
+	keyDC3       KeyType = 19  // device control three
+	keyDC4       KeyType = 20  // device control four
+	keyNAK       KeyType = 21  // negative acknowledge
+	keySYN       KeyType = 22  // synchronous idle
+	keyETB       KeyType = 23  // end of transmission block
+	keyCAN       KeyType = 24  // cancel
+	keyEM        KeyType = 25  // end of medium
+	keySUB       KeyType = 26  // substitution
+	keyESC       KeyType = 27  // escape, \e
+	keyFS        KeyType = 28  // file separator
+	keyGS        KeyType = 29  // group separator
+	keyRS        KeyType = 30  // record separator
+	keyUS        KeyType = 31  // unit separator
+	keyDEL       KeyType = 127 // delete. on most systems this is mapped to backspace, I hear
+	keyCtrlSpace KeyType = 32  // ctrl+space
 )
 
 // Control key aliases.
@@ -260,39 +261,40 @@ const (
 // Mappings for control keys and other special keys to friendly consts.
 var keyNames = map[KeyType]string{
 	// Control keys.
-	keyNUL: "ctrl+@", // also ctrl+` (that's ctrl+backtick)
-	keySOH: "ctrl+a",
-	keySTX: "ctrl+b",
-	keyETX: "ctrl+c",
-	keyEOT: "ctrl+d",
-	keyENQ: "ctrl+e",
-	keyACK: "ctrl+f",
-	keyBEL: "ctrl+g",
-	keyBS:  "ctrl+h",
-	keyHT:  "tab", // also ctrl+i
-	keyLF:  "ctrl+j",
-	keyVT:  "ctrl+k",
-	keyFF:  "ctrl+l",
-	keyCR:  "enter",
-	keySO:  "ctrl+n",
-	keySI:  "ctrl+o",
-	keyDLE: "ctrl+p",
-	keyDC1: "ctrl+q",
-	keyDC2: "ctrl+r",
-	keyDC3: "ctrl+s",
-	keyDC4: "ctrl+t",
-	keyNAK: "ctrl+u",
-	keySYN: "ctrl+v",
-	keyETB: "ctrl+w",
-	keyCAN: "ctrl+x",
-	keyEM:  "ctrl+y",
-	keySUB: "ctrl+z",
-	keyESC: "esc",
-	keyFS:  "ctrl+\\",
-	keyGS:  "ctrl+]",
-	keyRS:  "ctrl+^",
-	keyUS:  "ctrl+_",
-	keyDEL: "backspace",
+	keyCtrlSpace: "ctrl+ ",
+	keyNUL:       "ctrl+@", // also ctrl+` (that's ctrl+backtick)
+	keySOH:       "ctrl+a",
+	keySTX:       "ctrl+b",
+	keyETX:       "ctrl+c",
+	keyEOT:       "ctrl+d",
+	keyENQ:       "ctrl+e",
+	keyACK:       "ctrl+f",
+	keyBEL:       "ctrl+g",
+	keyBS:        "ctrl+h",
+	keyHT:        "tab", // also ctrl+i
+	keyLF:        "ctrl+j",
+	keyVT:        "ctrl+k",
+	keyFF:        "ctrl+l",
+	keyCR:        "enter",
+	keySO:        "ctrl+n",
+	keySI:        "ctrl+o",
+	keyDLE:       "ctrl+p",
+	keyDC1:       "ctrl+q",
+	keyDC2:       "ctrl+r",
+	keyDC3:       "ctrl+s",
+	keyDC4:       "ctrl+t",
+	keyNAK:       "ctrl+u",
+	keySYN:       "ctrl+v",
+	keyETB:       "ctrl+w",
+	keyCAN:       "ctrl+x",
+	keyEM:        "ctrl+y",
+	keySUB:       "ctrl+z",
+	keyESC:       "esc",
+	keyFS:        "ctrl+\\",
+	keyGS:        "ctrl+]",
+	keyRS:        "ctrl+^",
+	keyUS:        "ctrl+_",
+	keyDEL:       "backspace",
 
 	// Other keys.
 	KeyRunes:          "runes",
