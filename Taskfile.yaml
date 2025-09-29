@@ -8,6 +8,7 @@ tasks:
     cmds:
       - golangci-lint run
 
+
   test:
     desc: Run tests
     cmds:
