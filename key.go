@@ -261,7 +261,7 @@ const (
 // Mappings for control keys and other special keys to friendly consts.
 var keyNames = map[KeyType]string{
 	// Control keys.
-	keyCtrlSpace: "ctrl+ ",
+	keyCtrlSpace: "ctrl+[space]",
 	keyNUL:       "ctrl+@", // also ctrl+` (that's ctrl+backtick)
 	keySOH:       "ctrl+a",
 	keySTX:       "ctrl+b",
